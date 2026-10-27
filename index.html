@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFA Designer & Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DFA Designer & Simulator</h1>
+        <p>Write your own DFA problem and test your solution.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>1. Enter Your DFA Question</h2>
+            <p>Describe the language your DFA should accept.</p>
+
+            <textarea id="questionInput"
+                placeholder="Example: Accept all binary strings ending in 0"
+                rows="3"></textarea>
+
+            <button onclick="buildDFA()">Generate DFA</button>
+            <p id="questionResult" aria-live="polite"></p>
+
+            <p><strong>Examples you can try:</strong></p>
+            <ul>
+                <li>Accept binary strings ending in 0</li>
+                <li>Accept binary strings starting with 1</li>
+                <li>Accept binary strings containing 101</li>
+                <li>Accept binary strings with an even number of 1s</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>2. Test Your String</h2>
+            <p id="selectedRule">Generate a DFA question first.</p>
+
+            <label for="binaryInput">Enter a binary string:</label>
+            <input type="text" id="binaryInput"
+                placeholder="Example: 1010">
+
+            <button onclick="checkString()">Test String</button>
+            <p id="result" aria-live="polite"></p>
+        </section>
+
+        <section class="card">
+            <h2>3. DFA Transition Table</h2>
+            <div id="transitionTable">
+                Generate a DFA to display its transition table.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>4. How It Works</h2>
+            <p>A DFA (Deterministic Finite Automaton) reads a string
+            one symbol at a time and changes states according to its
+            transition rules.</p>
+            <p>The string is accepted if the final state is an
+            accepting state.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>DFA Designer & Simulator | Automata Theory Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
